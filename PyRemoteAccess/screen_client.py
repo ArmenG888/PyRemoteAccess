@@ -6,7 +6,7 @@ from mss import mss
 WIDTH = 1900
 HEIGHT = 1000
 class screen_client:
-    def __init__(self,ip="127.0.0.1",port=52002):
+    def __init__(self,ip_port=("127.0.0.1",52000)):
         sock = socket.socket()
         while True:
             try:
