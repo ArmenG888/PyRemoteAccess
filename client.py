@@ -1,6 +1,5 @@
 import socket
 import keyboard
-import pyautogui
 
 ip_port = ("192.168.1.2", 52000)
 class client:
@@ -12,7 +11,8 @@ class client:
             key = s.recv(1024).decode()
             if "'" in key:
                 key = key.replace("'", "",2)
-
+            elif "Key." in key:
+                key = key.replace("Key.", "")
             print(key)
             keyboard.press_and_release(key)
 
