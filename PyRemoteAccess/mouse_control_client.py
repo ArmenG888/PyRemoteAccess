@@ -1,4 +1,3 @@
-from threading import Thread
 import socket
 import keyboard
 import pyautogui
@@ -10,18 +9,10 @@ class client:
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.connect(ip_port)
         while True:
-            Thread(target = self.mouse).start()
-            Thread(target = self.keyboard).start()
-    def mouse(self):
-        x = s.recv(1024).decode()
-        y = s.recv(1024).decode()
-        pyautogui.moveTo(x,y)
-    def keyboard(self):
-        key = s.recv(1024).decode()
-        if "'" in key:
-            key = key.replace("'", "",2)
-        elif "Key." in key:
-            key = key.replace("Key.", "")
-        print(key)
-        keyboard.press_and_release(key)
+            packet = s.recv(1024).decode()
+            packet_1 = packet.split(",")
+            if packet_1[0] == "move":
+                pyautogui.moveTo(packet_1[1],packet_1[2])
+            else:
+                pyautogui.click()
 app = client(ip_port)
