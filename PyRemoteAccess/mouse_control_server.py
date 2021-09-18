@@ -4,8 +4,8 @@ from pynput.mouse import Listener
 import time
 
 ip_port = ("192.168.1.2", 52000)
-class keyboard_control:
-    def __init__(self, ip_port):
+class mouse_server:
+    def __init__(self, ip="127.0.0.1",port=52001):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind(ip_port)
@@ -22,4 +22,3 @@ class keyboard_control:
 
     def on_scroll(self,x, y, dx, dy):
         print(x, y, dx, dy)
-app = keyboard_control(ip_port)
