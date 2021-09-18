@@ -1,6 +1,6 @@
 # PyRemoteAccess
 
-Remote Access to a computer,
+Remote Access made with python
 
 You get access to the clients computer when the client runs the program and connects to the server.
 
