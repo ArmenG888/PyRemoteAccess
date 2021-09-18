@@ -9,4 +9,10 @@ For now there is only keyboard control but mouse controll, and viewing screen wi
 <h1> Installation </h1>
 
 <pre> git clone https://github.com/ArmenG888/PyRemoteAccess </pre>
-<pre> cd PyRemoteAccess/PyRemoteAccess/ </pre>
+<pre> cd PyRemoteAccess </pre>
+<h1> Installing Libraries <h1>
+Windows
+<pre> pip install -r requirements.txt </pre>
+Linux or Mac
+<pre> pip3 install -r requirements.txt </pre>
+  
