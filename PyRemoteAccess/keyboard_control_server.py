@@ -1,7 +1,7 @@
 from pynput.keyboard import Key, Listener
 import socket, keyboard
 
-ip_port = ("192.168.1.2", 52000)
+ip_port = ("192.168.1.2", 52001)
 class keyboard_control:
     def __init__(self, ip_port):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

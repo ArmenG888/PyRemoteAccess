@@ -14,9 +14,9 @@ class keyboard_control:
         with Listener(on_move=self.on_move, on_click=self.on_click, on_scroll=self.on_scroll) as listener:
             listener.join()
     def on_move(self,x, y):
-        self.conn.send("move,".encode() + str(x+","+y).encode())
-
-
+        message = "move," + str(x)+","+str(y)
+        self.conn.send(message.encode())
+        time.sleep(0.05)
     def on_click(self,x, y, button, pressed):
         self.conn.send("click".encode())
 
