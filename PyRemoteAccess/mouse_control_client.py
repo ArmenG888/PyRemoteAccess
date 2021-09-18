@@ -3,10 +3,10 @@ import keyboard
 import pyautogui
 import time
 class mouse_client:
-    def __init__(self,ip_port=("127.0.0.1",52001)):
+    def __init__(self,ip="127.0.0.1",port=52001):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.connect(ip_port)
+        s.connect((ip,port))
         while True:
             packet = s.recv(1024).decode()
             packet_1 = packet.split(",")
@@ -14,3 +14,4 @@ class mouse_client:
                 pyautogui.moveTo(packet_1[1],packet_1[2])
             else:
                 pyautogui.click()
+mouse_client=mouse_client()

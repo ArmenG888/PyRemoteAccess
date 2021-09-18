@@ -6,8 +6,8 @@ from mss import mss
 WIDTH = 1900
 HEIGHT = 1000
 class screen_client:
-    def __init__(self,ip_port=("127.0.0.1",52000)):
-        sock = socket.socket()
+    def __init__(self,ip_port=("127.0.0.1",52002)):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         while True:
             try:
                 sock.connect(ip_port)
@@ -34,3 +34,4 @@ class screen_client:
                 size_bytes = size.to_bytes(size_len, 'big')
                 conn.send(size_bytes)
                 conn.sendall(pixels)
+screen_client = screen_client()
