@@ -4,11 +4,8 @@ Remote Access made with python
 
 <h2>WORK IN PROGRESS.</h2>
 
-You get access to the clients computer when the client runs the program and connects to the server.
-
-For now there is only keyboard control and mouse control
-mouse control works seperatly with the keyboard control
-
+There are 6 files 3 for servers and 3 for clients
+Mouse, Keyboard, and Screen viewing works indepentently and all of them should I have different ports binded
 <h1> Installation </h1>
 
 <pre> git clone https://github.com/ArmenG888/PyRemoteAccess </pre>
