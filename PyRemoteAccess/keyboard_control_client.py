@@ -14,4 +14,4 @@ class keyboard_client:
                 key = key.replace("Key.", "")
             keyboard.press_and_release(key)
 
-#keyboard_client = keyboard_client()
+keyboard_client = keyboard_client()
