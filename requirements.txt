@@ -1,2 +1,4 @@
 keyboard
 pynput
+pygame
+pyautogui
