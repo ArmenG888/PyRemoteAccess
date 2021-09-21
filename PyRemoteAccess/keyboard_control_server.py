@@ -13,4 +13,4 @@ class keyboard_server:
         key1 = str(key)
         self.conn.send(key1.encode())
 
-#keyboard_server = keyboard_server()
+keyboard_server = keyboard_server()

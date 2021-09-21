@@ -11,8 +11,9 @@ def recvall(conn, length):
             return data
         buf += data
     return buf
-def main(host='192.168.1.2', port=50000):
-    sock = socket.socket()
+def main(host='127.0.0.1', port=50000):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind((host, port))
     print("Listening ....")
     sock.listen(5)
@@ -36,7 +37,6 @@ def main(host='192.168.1.2', port=50000):
             pygame.display.flip()
             clock.tick(60)
     finally:
-        print("PIXELS: ", pixels)
         sock.close()
 
 if __name__ == "__main__":
